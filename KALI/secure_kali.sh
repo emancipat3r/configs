@@ -41,6 +41,11 @@ read -p "Enter the username for the new non-root user: " new_username
 adduser $new_username
 usermod -aG sudo $new_username
 
+show_progress "Changing Hostname"
+read -p "Enter the new hostname for this VPS: " new_hostname
+hostnamectl set-hostname $new_hostname
+echo "127.0.1.1 $new_hostname" >> /etc/hosts
+
 show_progress "Installing and Configuring Fail2Ban"
 apt install fail2ban -y
 echo "[sshd]
