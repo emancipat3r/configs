@@ -46,6 +46,13 @@ read -p "Enter the new hostname for this VPS: " new_hostname
 hostnamectl set-hostname $new_hostname
 echo "127.0.1.1 $new_hostname" >> /etc/hosts
 
+show_progress "Installing Oh My Zsh"
+apt install zsh -y
+sudo -u $new_username sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$new_username/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions /home/$new_username/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' /home/$new_username/.zshrc
+
 show_progress "Installing and Configuring Fail2Ban"
 apt install fail2ban -y
 echo "[sshd]
