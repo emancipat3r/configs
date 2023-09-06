@@ -43,7 +43,7 @@ apt install -y ufw libpam-google-authenticator
 
 # Install & Configure Tailscale
 progress_banner "Installing and Configuring Tailscale"
-apt install -y tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
 echo 'net.ipv4.ip_forward = 1' | tee -a /etc/sysctl.conf
 echo 'net.ipv6.conf.all.forwarding = 1' | tee -a /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf
