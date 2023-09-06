@@ -36,10 +36,6 @@ prompt_for_setting() {
     fi
 }
 
-# Prompt for Domain Name and Email
-read -p "Enter your domain name: " DOMAIN_NAME
-read -p "Enter your email for SSL/TLS certificate notifications: " USER_EMAIL
-
 # Update & Install System Software
 progress_banner "Updating & Installing System Software"
 apt update && apt upgrade -y
