@@ -53,6 +53,7 @@ tailscale up --advertise-exit-node --accept-dns=false
 progress_banner "Installing and Configuring Pihole"
 
 ## Destination config file
+mkdir -p /etc/pihole/
 CONFIG_FILE="/etc/pihole/setupVars.conf"
 
 ## Prompt for settings and save them to variables
