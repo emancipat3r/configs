@@ -56,6 +56,7 @@ else
     bad "Failed to set desktop background."
 fi
 
+
 # DOWNLOAD AND EXTRACT THEME
 info "Downloading and applying Adwaita-Dark theme..."
 THEME_TAR_PATH="/home/$ORIGINAL_USER/Downloads/Adwaita-Dark.tar.gz"
