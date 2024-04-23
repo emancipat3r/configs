@@ -1,0 +1,17 @@
+/* Waybar: Style the entire bar */
+window#waybar {
+    background-color: #404040; /* Dark gray background */
+    opacity: 0.9; /* Slightly transparent */
+    padding: 0 10px; /* Padding on the left and right */
+}
+
+/* Module styling */
+#waybar .module {
+    color: #E0E0E0; /* Light gray color for text */
+    background-color: #2f3136; /*#303030 Slightly darker gray for each module */
+    padding: 0px 10px; /* Padding around the text */
+    margin: 5px 2px; /* Spacing between modules */
+    border-radius: 12px; /* Rounded corners */
+    font-weight: bold;
+    font-size: 14px;
+}
